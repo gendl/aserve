@@ -1,5 +1,6 @@
 The AllegroServe Webserver
-==========================
+(Portable Fork for use with ZACL, nicknamed zaserve)
+====================================================
 
 Table of contents
 -----------------
@@ -74,34 +75,55 @@ network programming in Allegro Common Lisp.  AllegroServe was written
 according to a certain coding standard to demonstrate how Lisp programs 
 are more readable if certain macros and special forms are avoided.
 
+
+A Note on Portability
+---------------------
+
+Although AllegroServe was originally written with portability (to
+other CL implementations) as "neither a goal nor a non-goal"
+(according to author John Foderaro), it is a testament to the
+cleanliness of the AllegroServe codebase, as well as the flexibility
+of Common Lisp, and the power of the CL ANSI standard, that some ports
+of AllegroServe have in fact been accomplished over the years.
+
+This is the most recent one, and attempts to keep as close as possible
+to the official AllegroServe code. It uses a compatibility layer
+called ["ZACL"](https://gitlab.common-lisp.net/zbeane/zacl), available
+in Quicklisp as `:zacl`.
+
+With this said, please do keep in mind that Allegro CL is
+AllegroServe's native platform, and as such, AllegroServe will always
+work and perform best on Allegro CL. So if you have mission-critical
+or performance-critical applications, it will be to your advantage to
+invest in Allegro CL for developing and running your
+AllegroServe applications.
+
+
 Platforms
 ---------
 
-AllegroServe works on all versions of Allegro Common Lisp since 6.0.
+Zaserve works on all recent versions SBCL and CCL. Contributions of
+[ZACL](https://gitlab.common-lisp.net/zbeane/zacl) ports to other
+platforms are welcome.
 
 Dependencies
 ------------
 
-There are no dependences for AllegroServe.  In order to run the
-allegroserve test suite you'll need to have the tester module
-(available at <https://github.com/franzinc>) loaded.
+Zaserve depends on
+[ZACL](https://gitlab.common-lisp.net/zbeane/zacl). This dependency is
+taken care of for Quicklisp with the included `zaserve.asd` file.
+
+In order to run the allegroserve test suite you'll need to have the
+tester module (available at <https://github.com/franzinc>) loaded.
 
 Installation
 ------------
 
 ### start lisp
     
-This should work in a lisp running in a :case-insensitive-upper or
-:case-sensitive-lower mode, although we do most of our running and
-testing in a :case-sensitive-lower lisp.  The current case mode is the
-value of excl:\*current-case-mode\* 
+    CL-USER> (ql:quickload :zaserve)
 
-### load in the file load.cl 
-
-    user(1):  :ld <path-to-aserve>/load.cl
-
-it will compile and and load all of AllegroServe, and it will load in
-the examples file too.
+This will not load the example files. 
 
 ### start the server
 
