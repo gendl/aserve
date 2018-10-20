@@ -1,6 +1,8 @@
 The AllegroServe Webserver
-(Portable Fork for use with ZACL, nicknamed zaserve)
 ====================================================
+
+(Portable Fork for use with ZACL, system name is "zaserve")
+
 
 Table of contents
 -----------------
@@ -8,6 +10,7 @@ Table of contents
    * Description
    * Author
    * Author comments
+   * Portability comments
    * Documentation
    * Platforms
    * Dependencies
@@ -76,8 +79,8 @@ according to a certain coding standard to demonstrate how Lisp programs
 are more readable if certain macros and special forms are avoided.
 
 
-A Note on Portability
----------------------
+Portability Comments
+--------------------
 
 Although AllegroServe was originally written with portability (to
 other CL implementations) as "neither a goal nor a non-goal"
@@ -91,12 +94,13 @@ to the official AllegroServe code. It uses a compatibility layer
 called ["ZACL"](https://gitlab.common-lisp.net/zbeane/zacl), available
 in Quicklisp as `:zacl`.
 
-With this said, please do keep in mind that Allegro CL is
-AllegroServe's native platform, and as such, AllegroServe will always
-work and perform best on Allegro CL. So if you have mission-critical
-or performance-critical applications, it will be to your advantage to
-invest in Allegro CL for developing and running your
-AllegroServe applications.
+With this said, please keep in mind that Allegro CL is AllegroServe's
+native platform, and as such, AllegroServe will always work and
+perform best on Allegro CL. Allegro CL also comes backed with expert
+commerical support. So if you have mission-critical or
+performance-critical applications, it will be to your advantage to
+invest in Allegro CL for developing and running your AllegroServe
+applications.
 
 
 Platforms
@@ -225,13 +229,15 @@ See the doc/tutorial.html file and the contents under the examples
 directory that are part of this project for more examples on how to
 work with AllegroServe.
 
-Franz Inc. Open Source Info
----------------------------
+Open Source Info
+----------------
       
-This project's homepage is <https://github.com/franzinc/aserve>. There is an
-informal community support and development mailing list 
-[opensource@franz.com](http://opensource.franz.com/mailinglist.html)
-for these open source projects. We encourage you to take advantage by
-subscribing to the list.  Once you're subscribed, email to
-<opensource@franz.com> with your questions, comments, suggestions, and
-patches.
+This project's homepage is <https://github.com/gendl/aserve>. The
+`master` branch is intended for this "zaserve" portable version, and
+the "franzinc-compatible" branch is intended to be kept in synch with
+the official [upstream repository maintained by Franz
+Inc](https://github.com/franzinc/aserve)
+
+You may file Issues [here](https://github.com/gendl/aserve/issues)
+with any questions, comments, or suggestions. You may also fork this
+repository and create Pull Requests.
