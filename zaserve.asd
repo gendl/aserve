@@ -4,8 +4,12 @@
 
 
 #+allegro
-(asdf:defsystem :zaserve
-    :components ((zacl-reader:cl-file "require-builtin-aserve")))
+(asdf:defsystem
+ :zaserve
+ :author "John K. Foderaro"
+ :licence "LLGPL"
+ :description "Trivial shim to load built-in aserve when running on Allegro CL" 
+ :components ((zacl-reader:cl-file "require-builtin-aserve")))
 
 
 #-allegro
@@ -32,12 +36,13 @@ For the legacy PortableAllegroserve, please try system name `paserve'.
 #-allegro
 (asdf:defsystem
  :zaserve
+ :author "John K. Foderaro"
+ :licence "LLGPL"
+ :description "Lightly modified fork of original AllegroServe for portability" 
  :depends-on (:zacl)
  :defsystem-depends-on (:zacl)
  :version "1.3.65"
  :name "AllegroServe"
- :author "John K. Foderaro"
- :licence "LLGPL"
  :components
  ;; this list is in load.cl as well... keep in sync
  ((:module "htmlgen" :components ((zacl-reader:cl-file "htmlgen")
