@@ -4,12 +4,20 @@
 
 
 #+allegro
+(defpackage #:acl-reader (:export #:cl-file))
+
+#+allegro
+(defclass acl-reader:cl-file (asdf:cl-source-file)
+  ((type :initform "cl")))
+
+#+allegro
 (asdf:defsystem
  :zaserve
  :author "John K. Foderaro"
  :licence "LLGPL"
  :description "Trivial shim to load built-in aserve when running on Allegro CL" 
- :components ((zacl-reader:cl-file "require-builtin-aserve")))
+ :components ((acl-reader:cl-file "require-builtin-aserve")))
+
 
 
 #-allegro
